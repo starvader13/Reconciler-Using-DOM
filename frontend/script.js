@@ -11,7 +11,7 @@ function addTodoToDom(todo) {
 
     innerTitleDiv.innerHTML = `<b>Title: </b> ${todo.title}`;
     innerDescriptionDiv.innerHTML = `<b>Description: </b> ${todo.description}`;
-    button.innerText = "Mark as done";
+    button.innerHTML = "Mark as done";
 
     outerDiv.appendChild(innerTitleDiv);
     outerDiv.appendChild(innerDescriptionDiv);
@@ -80,6 +80,11 @@ function updateState(newTodos) {
     })
 
     oldTodoState = newTodos;
+}
+
+function markAsDone(todoId){
+    const element =  document.getElementById(todoId);
+    element.children[2].innerHTML = "Done!";
 }
 
 setInterval(async ()=>{
